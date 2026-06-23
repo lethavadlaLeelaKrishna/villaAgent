@@ -624,31 +624,29 @@ Header Style
 
 /* 
 ---------------------------------------------
-Banner Style
+Banner Style (Bootstrap Carousel)
 --------------------------------------------- 
 */
 
-.main-banner .item {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 220px 20% 320px 20%;
-  margin-top: 0px;
+#carouselExampleCaptions .carousel-item {
+  position: relative;
 }
 
-.main-banner .item-1 {
-  background-image: url(../images/banner-01.jpg);
+#carouselExampleCaptions .carousel-item img {
+  height: 700px;
+  object-fit: cover;
 }
 
-.main-banner .item-2 {
-  background-image: url(../images/banner-02.jpg);
+#carouselExampleCaptions .carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+  right: auto;
+  text-align: left;
 }
 
-.main-banner .item-3 {
-  background-image: url(../images/banner-03.jpg);
-}
-
-.main-banner .item span.category {
+#carouselExampleCaptions .carousel-caption span.category {
   background-color: #fff;
   color: #1e1e1e;
   font-size: 16px;
@@ -659,12 +657,12 @@ Banner Style
   margin-bottom: 30px;
 }
 
-.main-banner .item span.category em {
+#carouselExampleCaptions .carousel-caption span.category em {
   font-style: normal;
   color: #f35525;
 }
 
-.main-banner .item h2 {
+#carouselExampleCaptions .carousel-caption h2 {
   font-size: 62px;
   font-weight: 700;
   text-transform: uppercase;
@@ -674,58 +672,59 @@ Banner Style
   margin-bottom: 0px;
 }
 
-.main-banner .owl-dots {
+#carouselExampleCaptions .carousel-indicators {
   position: absolute;
   bottom: 60px;
   left: 20%;
+  justify-content: flex-start;
 }
 
-.main-banner .owl-dots .owl-dot {
+#carouselExampleCaptions .carousel-indicators [data-bs-target] {
   width: 10px;
   height: 10px;
   background-color: #fff;
   border-radius: 50%;
+  opacity: 1;
   margin-right: 10px;
-  transition: all .5s;
 }
 
-.main-banner .owl-dots .active {
+#carouselExampleCaptions .carousel-indicators .active {
   background-color: #f35525;
 }
 
-.main-banner .owl-nav {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  transform: translateY(-50px);
+#carouselExampleCaptions .carousel-control-prev,
+#carouselExampleCaptions .carousel-control-next {
+  width: auto;
 }
 
-.main-banner .owl-nav .owl-prev i,
-.main-banner .owl-nav .owl-next i {
+#carouselExampleCaptions .carousel-control-prev-icon,
+#carouselExampleCaptions .carousel-control-next-icon {
   width: 50px;
   height: 50px;
   line-height: 50px;
   font-size: 24px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   opacity: 1;
   transition: all .3s;
+  background-image: none;
 }
 
-.main-banner .owl-nav .owl-prev i {
-  position: absolute;
-  left: 45px;
+#carouselExampleCaptions .carousel-control-prev-icon::before {
+  content: '\f053';
+  font-family: "FontAwesome";
+}
+#carouselExampleCaptions .carousel-control-next-icon::before {
+  content: '\f054';
+  font-family: "FontAwesome";
 }
 
-.main-banner .owl-nav .owl-next i {
-  position: absolute;
-  right: 45px;
-}
-
-.main-banner .owl-nav .owl-prev i:hover,
-.main-banner .owl-nav .owl-next i:hover {
+#carouselExampleCaptions .carousel-control-prev-icon:hover,
+#carouselExampleCaptions .carousel-control-next-icon:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.5);
 }
@@ -1646,8 +1645,17 @@ body {
   .header-area .main-nav .nav li:last-child a {
     padding-right: 15px;
   }
-  .main-banner .item h2 {
+  #carouselExampleCaptions .carousel-caption h2 {
     width: 100%;
+    font-size: 36px;
+    line-height: 48px;
+  }
+  #carouselExampleCaptions .carousel-caption {
+    left: 10%;
+    right: 10%;
+  }
+  #carouselExampleCaptions .carousel-indicators {
+    left: 10%;
   }
   .featured .section-heading {
     margin-left: 0px;
